@@ -2,24 +2,24 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 .navbar {
-  background: #382715cb;
-  height: 70px;
+  background: #131313;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 999;
 }
 
 .navbar__container {
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 80px;
   z-index: 1;
   width: 100%;
   max-width: 1300px;
@@ -27,22 +27,25 @@
   padding: 0 50px;
 }
 
-#navbar_picture {
-  background-color: rgb(64, 110, 11);
-  background-image: linear-gradient(to top, orange 50%, white 50%);
+#navbar_logo {
+  background-color: #ff8177;
+
   background-size: 100%;
   -webkit-background-clip: text;
-  -moz-background-clip: text;
+  /* -moz-background-clip: text; */
   -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+  /* -moz-text-fill-color: transparent; */
+  -moz-background-clip: text;
+
   display: flex;
   align-items: center;
   cursor: pointer;
   text-decoration: none;
   font-size: 2rem;
+  margin: 0 auto;
 }
 
-.test-gem {
+.fa-gem {
   margin-right: 0.5rem;
 }
 .navbar__menu {
@@ -52,7 +55,7 @@
   text-align: center;
 }
 .navbar__item {
-  height: 70px;
+  height: 80px;
 }
 .navbar__links {
   color: white;
@@ -67,22 +70,25 @@
 .navbar__btn {
   display: flex;
   justify-content: center;
-  padding: 0.5rem;
+  align-items: center;
+  padding: 0 1rem;
+  width: 100%;
 }
 .button {
   display: flex;
-  padding: 20px 20px;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  padding: 10px 20px;
   height: 100%;
   width: 100%;
   border: none;
   outline: none;
-  border-radius: 10px;
+  border-radius: 4px;
   background: orange;
-  transition: width 2s;
-  transition: 0.2s ease, padding 0.8s linear;
+  color: white;
+  /* transition: width 2s;
+  transition: 0.2s ease, padding 0.8s linear; */
   /* color: white; */
 }
 
@@ -92,25 +98,28 @@
     rgb(231, 231, 231) 100%,
     rgb(248, 130, 130) 100%
   ); */
-  background: linear-gradient(
+  /* background: linear-gradient(
       217deg,
       rgba(255, 0, 0, 0.8),
       rgb(248, 243, 243) 70.71%
     ),
     linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
-    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%); */
+  background: #4837ff;
+  transition: all 0.5s ease;
 }
 .navbar__links:hover {
   color: red;
-  transition: all 1s ease-in-out;
+  transition: all 1s ease;
 }
 
-@media screen and (max-width: 600px) {
-  .navbar_cointainer {
+@media screen and (max-width: 960px) {
+  .navbar__cointainer {
     display: flex;
     justify-content: space-between;
-    height: 70px;
-    z-index: 1s;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
     max-width: 1300px;
     padding: 0;
   }
@@ -120,34 +129,37 @@
     grid-template-columns: auto;
     margin: 0;
     width: 100%;
-    top: -33;
-
     position: absolute;
-    opacity: 0;
-    height: 30vh;
-    transition: all 1s ease-in-out;
+    /* top: -1000px;
+    opacity: 0; */
+    top: -1000px;
+    background: #000000cb;
+
+    transition: all 1s ease;
+    height: 50vh;
     z-index: -1;
   }
 
   .navbar__menu.active {
     background: black;
-    top: 100;
-    transition: all 1s ease;
+    top: 100%;
+
     opacity: 1;
-    z-index: 999;
-    height: 30vh;
+    transition: all 1s ease;
+    z-index: 99;
+    height: 50vh;
     font-size: 1.6rem;
   }
-  .navbar__toggle {
-    padding-left: 20px;
+  #mobile-menu {
+    padding-left: 25px;
+    background-color: black;
+    color: aquamarine;
   }
 
-  #mobile-toggle {
-    padding-left: 10px;
-  }
   .navbar__toggle .bar {
     width: 25px;
     height: 4px;
+    margin: auto;
     transition: all 1s ease-in-out;
     background: white;
   }
@@ -160,5 +172,26 @@
     padding: 2rem;
     width: 100%;
     display: table;
+  }
+  #mobile-menu {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: translate(5%, 20%);
+  }
+  .navbar__btn {
+    padding-bottom: 2rem;
+  }
+  .button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80px;
+    margin: 0;
+  }
+  .navbar__toggle .bar {
+    display: block;
+    cursor: pointer;
   }
 }
