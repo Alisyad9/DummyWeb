@@ -130,30 +130,30 @@
     margin: 0;
     width: 100%;
     position: absolute;
-    /* top: -1000px;
-    opacity: 0; */
     top: -1000px;
-    background: #000000cb;
+    opacity: 0;
+    /* top: -1000px; */
+    /* background: #000000cb; */
 
     transition: all 1s ease;
     height: 50vh;
     z-index: -1;
+    background: #131313;
   }
 
   .navbar__menu.active {
-    background: black;
+    background: #131313;
     top: 100%;
 
     opacity: 1;
     transition: all 1s ease;
+    opacity: 1;
     z-index: 99;
     height: 50vh;
     font-size: 1.6rem;
   }
   #mobile-menu {
     padding-left: 25px;
-    background-color: black;
-    color: aquamarine;
   }
 
   .navbar__toggle .bar {
@@ -193,5 +193,14 @@
   .navbar__toggle .bar {
     display: block;
     cursor: pointer;
+  }
+  #mobile-menu.is-active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu.is-active .bar:nth-child(1) {
+    transform: translateX(8px) rotate(90deg);
+  }
+  #mobile-menu.is-active .bar:nth-child(3) {
+    transform: translateX(8px) rotate(-90deg);
   }
 }
