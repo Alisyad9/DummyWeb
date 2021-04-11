@@ -43,7 +43,7 @@ function findShort(s) {
 
 function numbersOnly(value) {
   let result = [];
-  result.push(...value);
+  // result.push(...value);
   console.log(result);
   // if (typeof value === 'number') {
   //   console.log('number');
@@ -54,3 +54,21 @@ function numbersOnly(value) {
 }
 
 numbersOnly([1, 2, 3, 4, '22'][(2, 2, 3)]);
+
+function reverse(str) {
+  let tempLetter = str.split(' ');
+
+  let tempStorage = [tempLetter];
+  console.log(tempLetter);
+  var result = [];
+  let newString = [];
+  for (let i = 0; i < tempLetter.length; i += 2) {
+    if ((i) => 0) result.push(tempLetter[i]);
+    let reverseString = result.reverse();
+    console.log(result[i]);
+  }
+
+  return result;
+}
+
+console.log(reverse('hello how are you doing'));
