@@ -53,22 +53,83 @@ function numbersOnly(value) {
   // return value;
 }
 
-numbersOnly([1, 2, 3, 4, '22'][(2, 2, 3)]);
+// numbersOnly([1, 2, 3, 4, '22'][(2, 2, 3)]);
 
-function reverse(str) {
-  let tempLetter = str.split(' ');
+// function reverse(str) {
+//   let tempLetter = str.split(' ');
 
-  let tempStorage = [tempLetter];
-  console.log(tempLetter);
-  var result = [];
-  let newString = [];
-  for (let i = 0; i < tempLetter.length; i += 2) {
-    if ((i) => 0) result.push(tempLetter[i]);
-    let reverseString = result.reverse();
-    console.log(result[i]);
+//   let tempStorage = [tempLetter];
+//   console.log(tempLetter);
+//   var result = [];
+//   let newString = [];
+//   for (let i = 1; i < tempLetter.length; i += 2) {
+//     if ((i) => 1) result.push(tempLetter[i]);
+//     result.forEach((element) => {});
+
+// if ((i) => 0) newString.push(tempLetter[i]);
+// console.log(newString);
+// let reverseString = result.reverse();
+// console.log(result[i]);
+//   }
+
+//   return result;
+// }
+
+// console.log(reverse('how are you doing MR Baalwaan'));
+
+// function reverse(string) {
+//   let finalString = '';
+//   var result = [];
+//   var result2 = [];
+//   let tempLetter = string.split(' ');
+//   for (let i = 0; i < tempLetter.length; i++) {
+//     tempLetter[i];
+//     // console.log(i);
+//     if (i % 2 && i >= 0) {
+//       result = tempLetter[i].split('').reverse('').join('');
+//       result2.push(result);
+//       console.log(result);
+//       // console.log(tempLetter[i]);
+//     } else {
+//       result2.push(tempLetter[i]);
+//       // console.log(tempLetter[i]);
+//     }
+//   }
+//   finalString = result2;
+//   return finalString.join(' ').trim('');
+// }
+
+// console.log(reverse('Sfinnally it works, my friend      as    sadas'));
+
+let inList = (a, b) => {
+  var testArrat = [];
+
+  // let resulta = [];
+  // let resultb = [];
+  // resulta.push(...a);
+  // resultb.push(b);
+  // console.log(resulta);
+
+  for (let i = 0; i < a.length; i++) {
+    testArrat.push(a[i]);
+    console.log(a[i]);
+    for (let j = 0; j < b.length; j++) {
+      console.log(b[j].length);
+
+      if (a[i].indexOf(b)) {
+      }
+    }
+    // s
+    console.log(a[i]);
+
+    // if (a[i].indexOf(b) !== -1) {
+    //   console.log(' present');
+    //   if (a === b) break;
+    //   {
+    //   }
   }
 
-  return result;
-}
+  return testArrat;
+};
 
-console.log(reverse('hello how are you doing'));
+console.log(inList([1, 2, 3, 4], [1, 2]));
