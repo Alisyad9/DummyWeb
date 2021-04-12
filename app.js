@@ -116,8 +116,8 @@ let inList = (a, b) => {
     for (let j = 0; j < b.length; j++) {
       console.log(b[j].length);
 
-      if (a[i].indexOf(b)) {
-      }
+      // if (a[i].indexOf(b)) {
+      // }
     }
     // s
     console.log(a[i]);
@@ -133,3 +133,22 @@ let inList = (a, b) => {
 };
 
 console.log(inList([1, 2, 3, 4], [1, 2]));
+
+function isValidWalk(walk) {
+  var north = 0;
+  var south = 0;
+  var east = 0;
+  var west = 0;
+  if (walk.length === 10) {
+    for (let iterator of walk) {
+      console.log(str1[iterator]);
+      if (iterator === 'n') north++;
+      if (iterator === 's') south--;
+      if (iterator === 'e') east++;
+      if (iterator === 'w') west--;
+    }
+  } else {
+    return false;
+  }
+  return north || (south === 0 && east) || west === 0;
+}
