@@ -53,27 +53,7 @@ function numbersOnly(value) {
   // return value;
 }
 
-// numbersOnly([1, 2, 3, 4, '22'][(2, 2, 3)]);
-
-// function reverse(str) {
-//   let tempLetter = str.split(' ');
-
-//   let tempStorage = [tempLetter];
-//   console.log(tempLetter);
-//   var result = [];
-//   let newString = [];
-//   for (let i = 1; i < tempLetter.length; i += 2) {
-//     if ((i) => 1) result.push(tempLetter[i]);
-//     result.forEach((element) => {});
-
-// if ((i) => 0) newString.push(tempLetter[i]);
-// console.log(newString);
-// let reverseString = result.reverse();
-// console.log(result[i]);
-//   }
-
-//   return result;
-// }
+numbersOnly([1, 2, 3, 4, '22'][(2, 2, 3)]);
 
 // console.log(reverse('how are you doing MR Baalwaan'));
 
@@ -132,23 +112,61 @@ let inList = (a, b) => {
   return testArrat;
 };
 
-console.log(inList([1, 2, 3, 4], [1, 2]));
+// console.log(inList([1, 2, 3, 4], [1, 2]));
 
-function isValidWalk(walk) {
-  var north = 0;
-  var south = 0;
-  var east = 0;
-  var west = 0;
-  if (walk.length === 10) {
-    for (let iterator of walk) {
-      console.log(str1[iterator]);
-      if (iterator === 'n') north++;
-      if (iterator === 's') south--;
-      if (iterator === 'e') east++;
-      if (iterator === 'w') west--;
-    }
-  } else {
-    return false;
-  }
-  return north || (south === 0 && east) || west === 0;
+// function isValidWalk(walk) {
+//   var north = 0;
+//   var south = 0;
+//   var east = 0;
+//   var west = 0;
+//   if (walk.length === 10) {
+//     for (let iterator of walk) {
+//       console.log(str1[iterator]);
+//       if (iterator === 'n') north++;
+//       if (iterator === 's') south--;
+//       if (iterator === 'e') east++;
+//       if (iterator === 'w') west--;
+//     }
+//   } else {
+//     return false;
+//   }
+//   return north || (south === 0 && east) || west === 0;
+// }
+
+// function filter_list(numberOnly) {
+//   let resultFilter = [];
+//   let element = [];
+//   for (let index = 0; index < numberOnly.length; index++) {
+//     element.push(numberOnly[index]);
+
+//     console.log(element);
+//     // console.log(l[index]);
+//   }
+//   let number = 0;
+//   resultFilter = element.typeof(number);
+
+//   console.log();
+
+//   return resultFilter;
+// }
+
+function filter_list(a, b) {
+  let resultFilter = [];
+  let emptyArray = [];
+
+  if (a.length === 0) return emptyArray;
+
+  a.forEach((elementA) => {
+    console.log(elementA);
+
+    if (b.indexOf(elementA) === -1) resultFilter.push(elementA);
+    else return emptyArray;
+  });
+  b.forEach((elementB) => {
+    console.log(elementB);
+    if (a.indexOf(elementB) === -1) resultFilter.push(elementB);
+  });
+
+  return resultFilter;
 }
+console.log(filter_list([1, 2, 3, 4], [2, 1]));
