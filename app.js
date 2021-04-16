@@ -150,23 +150,107 @@ let inList = (a, b) => {
 //   return resultFilter;
 // }
 
-function filter_list(a, b) {
-  let resultFilter = [];
-  let emptyArray = [];
+// function filter_list(a, b) {
+//   let resultFilter = [];
+//   let emptyArray = [];
 
-  if (a.length === 0) return emptyArray;
+//   if (a.length === 0) return emptyArray;
 
-  a.forEach((elementA) => {
-    console.log(elementA);
+//   a.forEach((elementA) => {
+//     console.log(elementA);
 
-    if (b.indexOf(elementA) === -1) resultFilter.push(elementA);
-    else return emptyArray;
+//     if (b.indexOf(elementA) === -1) resultFilter.push(elementA);
+//     else return emptyArray;
+//   });
+//   b.forEach((elementB) => {
+//     console.log(elementB);
+//     if (a.indexOf(elementB) === -1) resultFilter.push(elementB);
+//   });
+
+//   return resultFilter;
+// }
+// console.log(filter_list([1, 2, 3, 4], [2, 1]));
+
+// function addNumber(a, b) {
+//   return addNumber.filter;
+// }
+
+const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
+
+/**
+ * Filter array items based on search criteria (query)
+ */
+// const filterItems = (arr, query) => {
+//   return arr.filter(
+//     (el) => el.toLowerCase().indexOf(query.toLowerCase()) !== -1
+//   );
+// };
+
+// console.log(filterItems(fruits, 'ap')); // ['apple', 'grapes']
+// console.log(filterItems(fruits, 'an')); // ['banana', 'mango', 'orange']
+
+// function alphabetPosition(text) {
+//   let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+//   let upperCase = text.toUpperCase();
+//   let emptyArray = [];
+
+//   for (let key in upperCase) {
+//     if (upperCase.hasOwnProperty.call(upperCase, key)) {
+//       let element = upperCase[key];
+//       console.log(element);
+//       element = letters.indexOf(upperCase[key]);
+//       console.log(element);
+//       if (element === -1) {
+//         continue;
+//       } else {
+//         emptyArray.push(element + 1);
+//       }
+//     }
+//   }
+//   return emptyArray.join('');
+// }
+// console.log(alphabetPosition('how are you doing'));
+
+// var moveZeros = (arr) => {
+//   let result = [];
+//   let result2 = [];
+//   arr.forEach((element) => {
+//     console.log(element);
+
+//     element !== 0 ? result.push(element) : result2.push(element);
+//   });
+//   return result.concat(result2);
+// };
+
+// console.log(moveZeros([0, 0, 1, null, false, 2, 3, 0, 4, 2, 0, 8]));
+
+function pigIt(str) {
+  let stringName = str.split(' ');
+  let result = [];
+  let result2 = [];
+  stringName.forEach((element) => {
+    // result.push(element.charAt(0) + 'ay');
+
+    if (element.match(/[A-z]/i)) {
+      result.push(`${element.substr(1)}${element.substr(0, 1)}ay`);
+    } else {
+      result.push(`${element.substr(1)}${element.substr(0, 1)}`);
+    }
   });
-  b.forEach((elementB) => {
-    console.log(elementB);
-    if (a.indexOf(elementB) === -1) resultFilter.push(elementB);
-  });
 
-  return resultFilter;
+  return result.join(' ');
 }
-console.log(filter_list([1, 2, 3, 4], [2, 1]));
+
+// function pigIt(str) {
+//   const arr = str.split(' ');
+
+//   return arr
+//     .map((word) => {
+//       return word.match(/[A-z]/i)
+//         ? `${word.substr(1)}${word.substr(0, 1)}ay`
+//         : word;
+//     })
+//     .join(' ');
+// }
+
+console.log(pigIt('Pig latin is cool ? !'));
