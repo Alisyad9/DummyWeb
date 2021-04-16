@@ -224,22 +224,21 @@ const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 // console.log(moveZeros([0, 0, 1, null, false, 2, 3, 0, 4, 2, 0, 8]));
 
-function pigIt(str) {
-  let stringName = str.split(' ');
-  let result = [];
-  let result2 = [];
-  stringName.forEach((element) => {
-    // result.push(element.charAt(0) + 'ay');
+// function pigIt(str) {
+//   let stringName = str.split(' ');
+//   let result = [];
 
-    if (element.match(/[A-z]/i)) {
-      result.push(`${element.substr(1)}${element.substr(0, 1)}ay`);
-    } else {
-      result.push(`${element.substr(1)}${element.substr(0, 1)}`);
-    }
-  });
+//   stringName.forEach((element) => {
 
-  return result.join(' ');
-}
+//     if (element.match(/[A-z]/i)) {
+//       result.push(`${element.substr(1)}${element.substr(0, 1)}ay`);
+//     } else {
+//       result.push(`${element.substr(1)}${element.substr(0, 1)}`);
+//     }
+//   });
+
+//   return result.join(' ');
+// }
 
 // function pigIt(str) {
 //   const arr = str.split(' ');
@@ -253,4 +252,16 @@ function pigIt(str) {
 //     .join(' ');
 // }
 
-console.log(pigIt('Pig latin is cool ? !'));
+// console.log(pigIt('Pig latin is cool ? !'));
+function rgb(r, g, b) {
+  red = r.toString(16);
+  green = g.toString(16);
+  blue = b.toString(16);
+
+  if (red.length === 1) red = '0' + red;
+  if (green.length === 1) green = '0' + green;
+  if (blue.length === 1) blue = '0' + blue;
+
+  return '#' + red + green + blue;
+}
+console.log(rgb(148, 0, 211));
