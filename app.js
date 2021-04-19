@@ -1,11 +1,13 @@
-console.log('Hello World');
+console.log();
 const menu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navba__menu');
+const menuLinks = document.querySelector('.navbar__menu');
 
 menu.addEventListener('click', function () {
   menu.classList.toggle('is-active');
   menuLinks.classList.toggle('active');
 });
+
+// below is codewars
 
 // function name(a, b) {
 //   a === b
@@ -253,15 +255,53 @@ const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 // }
 
 // console.log(pigIt('Pig latin is cool ? !'));
+
 function rgb(r, g, b) {
-  red = r.toString(16);
-  green = g.toString(16);
-  blue = b.toString(16);
+  red = r;
+  green = g;
+  blue = b;
+ function RGBhex  (params) {
+   
+ }
+  if ((red > 255, green > 255, blue > 255)) {
+    console.log('true');
+    return 'FF';
+  } else if ((red < 0, green < 0, blue < 0)) {
+    console.log('false');
+    return '00';
+  }
+  green.length == 1 ? '0' + green : green;
+  blue.length == 1 ? '0' + blue : blue;
 
-  if (red.length === 1) red = '0' + red;
-  if (green.length === 1) green = '0' + green;
-  if (blue.length === 1) blue = '0' + blue;
+  if (red.length == 1) red = '0' + red;
+  if (green.length == 1) green = '0' + green;
+  if (blue.length == 1) blue = '0' + blue;
 
-  return '#' + red + green + blue;
+  return red + green + blue;
 }
-console.log(rgb(148, 0, 211));
+
+console.log(rgb(-1, -1, 263));
+
+// function componentToHex(c) {G
+//   var hex = c.toString(16);
+//   return hex.length == 1 ? '0' + hex : hex;
+
+//   function rgbToHex(r, g, b) {
+//     return componentToHex(r) + componentToHex(g) + componentToHex(b);
+//   }
+// }
+// console.log(rgbToHex(255, 255, 300));
+// var rgbToHex = function (rgb) {
+//   var hex = Number(rgb).toString(16);
+//   if (hex.length < 2) {
+//     hex = '0' + hex;
+//   }
+//   return hex;
+// };
+// var fullColorHex = function (r, g, b) {
+//   var red = rgbToHex(r);
+//   var green = rgbToHex(g);
+//   var blue = rgbToHex(b);
+//   return red + green + blue;
+// };
+// console.log(fullColorHex(255, 255, 300));
