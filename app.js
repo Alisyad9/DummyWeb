@@ -260,9 +260,7 @@ function rgb(r, g, b) {
   red = r;
   green = g;
   blue = b;
- function RGBhex  (params) {
-   
- }
+  function RGBhex(params) {}
   if ((red > 255, green > 255, blue > 255)) {
     console.log('true');
     return 'FF';
@@ -305,3 +303,13 @@ console.log(rgb(-1, -1, 263));
 //   return red + green + blue;
 // };
 // console.log(fullColorHex(255, 255, 300));
+
+function humanReadable(seconds) {
+  let SS = parseInt(seconds / (60 * 60));
+  let MM = parseInt(seconds / (60 % 60));
+  let HH = parseInt(seconds / (60 * 60));
+
+  return HH + MM + SS;
+}
+
+console.log(humanReadable(6033332));
