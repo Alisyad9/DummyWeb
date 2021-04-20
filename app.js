@@ -312,4 +312,4 @@ function humanReadable(seconds) {
   return HH + MM + SS;
 }
 
-console.log(humanReadable(6033332));
+console.log(humanReadable('6033332'));
