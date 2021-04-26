@@ -256,29 +256,29 @@ const fruits = ['apple', 'banana', 'grapes', 'mango', 'orange'];
 
 // console.log(pigIt('Pig latin is cool ? !'));
 
-function rgb(r, g, b) {
-  red = r;
-  green = g;
-  blue = b;
-  function RGBhex(params) {}
-  if ((red > 255, green > 255, blue > 255)) {
-    console.log('true');
-    return 'FF';
-  } else if ((red < 0, green < 0, blue < 0)) {
-    console.log('false');
-    return '00';
-  }
-  green.length == 1 ? '0' + green : green;
-  blue.length == 1 ? '0' + blue : blue;
+// function rgb(r, g, b) {
+//   red = r;
+//   green = g;
+//   blue = b;
+//   function RGBhex(params) {}
+//   if ((red > 255, green > 255, blue > 255)) {
+//     console.log('true');
+//     return 'FF';
+//   } else if ((red < 0, green < 0, blue < 0)) {
+//     console.log('false');
+//     return '00';
+//   }
+//   green.length == 1 ? '0' + green : green;
+//   blue.length == 1 ? '0' + blue : blue;
 
-  if (red.length == 1) red = '0' + red;
-  if (green.length == 1) green = '0' + green;
-  if (blue.length == 1) blue = '0' + blue;
+//   if (red.length == 1) red = '0' + red;
+//   if (green.length == 1) green = '0' + green;
+//   if (blue.length == 1) blue = '0' + blue;
 
-  return red + green + blue;
-}
+//   return red + green + blue;
+// }
 
-console.log(rgb(-1, -1, 263));
+// console.log(rgb(-1, -1, 263));
 
 // function componentToHex(c) {G
 //   var hex = c.toString(16);
@@ -289,27 +289,48 @@ console.log(rgb(-1, -1, 263));
 //   }
 // }
 // console.log(rgbToHex(255, 255, 300));
-// var rgbToHex = function (rgb) {
-//   var hex = Number(rgb).toString(16);
-//   if (hex.length < 2) {
-//     hex = '0' + hex;
-//   }
-//   return hex;
-// };
-// var fullColorHex = function (r, g, b) {
-//   var red = rgbToHex(r);
-//   var green = rgbToHex(g);
-//   var blue = rgbToHex(b);
-//   return red + green + blue;
-// };
-// console.log(fullColorHex(255, 255, 300));
+var rgbToHex = function (rgb) {
+  var hex = Number(rgb).toString(16);
+  if (hex.length < 2) {
+    hex = '0' + hex;
+  }
+  return hex;
+};
+var fullColorHex = function (r, g, b) {
+  var red = rgbToHex(r);
+  var green = rgbToHex(g);
+  var blue = rgbToHex(b);
+  return red + green + blue;
+};
+console.log(fullColorHex(255, 255, 300));
 
-function humanReadable(seconds) {
-  let SS = parseInt(seconds / (60 * 60));
-  let MM = parseInt(seconds / (60 % 60));
-  let HH = parseInt(seconds / (60 * 60));
+// function humanReadable(seconds) {
+//   //   changing the second into hours
+//   let hoursInSeconds = ('0' + parseInt(seconds / (60 * 60))).slice(-2);
+//   console.log(hoursInSeconds);
+//   //   changing the second into minutes
+//   let minutesInSeconds = ('0' + parseInt((seconds / 60) % 60)).slice(-2);
+//   console.log(minutesInSeconds);
+//   //  changing the second into seconds, slice to only return two right most number, examp
+//   //example with slice(-2) in this arry [2,2,3,4] would return 3,4.
+//   let secSeonds = ('0' + (seconds % 60)).slice(-2);
+//   console.log(secSeonds);
 
-  return HH + MM + SS;
+//   return `${hoursInSeconds}:${minutesInSeconds}:${secSeonds}`;
+
+// }
+// console.log(humanReadable(10));
+
+function rgb(r, g, b) {
+  function funct(number) {
+    if (number > 255) {
+      return 'FF';
+    } else if (number < 0) {
+      return '00';
+    } else {
+      return number.toString(16).toUpperCase().padStart(2, '0');
+    }
+  }
+  return funct(r) + funct(g) + funct(b);
 }
-
-console.log(humanReadable('6033332'));
+console.log(rgb(291, 14, 192));

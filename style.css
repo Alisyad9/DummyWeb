@@ -210,3 +210,11 @@ body {
     transform: translateX(0px) rotate(-45deg);
   }
 }
+
+/* //////////////////////////////////////////////////////////// */
+/* https://flexboxfroggy.com/ */
+
+.navbar__toggle {
+  align-items: flex-end;
+  order: ;
+}
