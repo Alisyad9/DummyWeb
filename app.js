@@ -334,3 +334,102 @@ function rgb(r, g, b) {
   return funct(r) + funct(g) + funct(b);
 }
 console.log(rgb(291, 14, 192));
+
+// function rot13(message) {
+//   let result = '';
+//   result = message.split('').reduce(result, (value) => {
+//     // check if value is a letter
+//     //if not return result + value
+//     if (/[^A-z]/.test(value)) return result + value;
+//     if (/[A-z]/i.test(value)) {
+//       let shiftWord = String.fromCharCode(value.charCodeAt() + 13);
+//       return shiftWord;
+//     }
+//   });
+//   return result;
+// }
+
+let rot13 = (message) =>
+  message.split('').reduce((endResult, value) => {
+    if (/[^a-zA-Z]/.test(value)) return endResult + value;
+
+    /////String lower case
+    if (/[a-z]/.test(value)) {
+      let shiftWord = String.fromCharCode(value.charCodeAt() + 13);
+
+      if (/[a-z]/.test(shiftWord)) {
+        return endResult + shiftWord;
+      }
+
+      return endResult + String.fromCharCode(value.charCodeAt() - 13);
+    }
+
+    ////String upper case
+
+    if (/[A-Z]/.test(value)) {
+      let shiftWord = String.fromCharCode(value.charCodeAt() + 13);
+
+      if (/[A-Z]/.test(shiftWord)) {
+        return endResult + shiftWord;
+      }
+
+      return endResult + String.fromCharCode(value.charCodeAt() - 13);
+    }
+  }, '');
+
+function newRot(newMessage) {
+  let result = '';
+
+  result = newMessage.split('').reduce((newResult, currentValue) => {
+    if (/[^a-zA-Z]/.test(currentValue)) return newResult + currentValue;
+
+    /////String lower case
+    if (/[a-z]/.test(currentValue)) {
+      let shiftWord = String.fromCharCode(currentValue.charCodeAt() + 13);
+
+      if (/[a-z]/.test(shiftWord)) {
+        return newResult + shiftWord;
+      }
+
+      return newResult + String.fromCharCode(currentValue.charCodeAt() - 13);
+    }
+
+    ////String upper case
+
+    if (/[A-Z]/.test(currentValue)) {
+      let shiftWord = String.fromCharCode(currentValue.charCodeAt() + 13);
+
+      if (/[A-Z]/.test(shiftWord)) {
+        return newResult + shiftWord;
+      }
+
+      return newResult + String.fromCharCode(currentValue.charCodeAt() - 13);
+    }
+  }, '');
+  return result;
+}
+
+// Challenge 3  28 April 2021
+
+// divisible is a function that accepts an array and returns all the values in that array which are divisible by three. Try using a higher order function (e.g. map, reduce...).
+function divisible(array) {
+  return array.filter((divThree) => divThree % 3 === 0);
+}
+function divisibleMap(array) {
+  let result = [];
+  array.map((n) => {
+    if (n % 3 === 0) return result.push(n);
+  });
+  return result;
+}
+function divid3(numbers) {
+  let result = [];
+  numbers.reduce((accumulator, value) => {
+    if (value % 3 === 0) result.push(value);
+  });
+  return result;
+}
+
+divisible([1, 2, 3, 4]); //expected: [3]
+divisible([1, 3, 6, 13, 15]); //expected: [3, 6, 15]
+divisible([21, 17, 12]); //expected: [21, 12]
